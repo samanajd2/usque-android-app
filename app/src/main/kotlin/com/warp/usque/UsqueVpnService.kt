@@ -106,8 +106,8 @@ class UsqueVpnService : VpnService() {
                 .setSession("Usque VPN")
                 .setMtu(1280)
                 .addAddress(localIp, 32)
-                .addDnsServer("1.1.1.1")
-                .addDnsServer("1.0.0.1")
+                .addDnsServer("94.140.15.15")
+                .addDnsServer("94.140.14.14")
                 .addRoute("0.0.0.0", 0)
 
             if (splitMode) {
@@ -130,8 +130,8 @@ class UsqueVpnService : VpnService() {
             if (ipv6.isNotBlank()) runCatching {
                 builder.addAddress(ipv6, 128)
                 builder.addRoute("::", 0)
-                builder.addDnsServer("2606:4700:4700::1111")
-                builder.addDnsServer("2606:4700:4700::1001")
+                builder.addDnsServer("2a10:50c0::ad1:ff")
+                builder.addDnsServer("2a10:50c0::ad2:ff")
             }.onFailure { Log.w(TAG, "ipv6 setup failed", it) }
 
             val pfd = builder.establish() ?: throw IllegalStateException("builder.establish returned null")
