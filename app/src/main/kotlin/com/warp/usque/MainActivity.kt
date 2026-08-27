@@ -180,7 +180,7 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = "Usque RU ${appVersionName()}"
+        title = "Usque ${appVersionName()}"
         useEnglish = prefs.getBoolean("useEnglish", false)
         buildUi()
         loadSavedState()
@@ -231,7 +231,7 @@ class MainActivity : Activity() {
             setBackgroundColor(bg)
         }
         val toolbar = MaterialToolbar(this).apply {
-            title = "Usque RU ${appVersionName()}"
+            title = "Usque ${appVersionName()}"
             subtitle = null
             setTitleTextColor(textColor)
             setSubtitleTextColor(subText)
@@ -271,7 +271,7 @@ class MainActivity : Activity() {
         val homePage = buildHomePage()
         val configPage = buildConfigPage()
         val appsPage = buildAppsPage()
-        val titles = listOf("Usque RU ${appVersionName()}", tr("Настройки подключения", "Connection Config"), tr("Выбор приложений", "Select Apps"))
+        val titles = listOf("Usque ${appVersionName()}", tr("Настройки подключения", "Connection Config"), tr("Выбор приложений", "Select Apps"))
         val pages = listOf(homePage, configPage, appsPage)
         fun showIndex(index: Int) {
             val safe = index.coerceIn(0, pages.lastIndex)
@@ -755,10 +755,10 @@ class MainActivity : Activity() {
             profiles["cdnjs.cloudflare.com:443:162.159.199.2 (loc 2) h3"] = Profile("cdnjs.cloudflare.com", "162.159.199.2", 443, false)
             profiles["cdnjs.cloudflare.com:443:162.159.198.2 (loc 1) h2"] = Profile("cdnjs.cloudflare.com", "162.159.198.2", 443, true)
             profiles["cdnjs.cloudflare.com:443:162.159.199.2 (loc 2) h2"] = Profile("cdnjs.cloudflare.com", "162.159.199.2", 443, true)
-            profiles["deepseek.com:443:162.159.198.2 (loc 1) h3"] = Profile("deepseek.com", "162.159.198.2", 443, false)
-            profiles["deepseek.com:443:162.159.199.2 (loc 2) h3"] = Profile("deepseek.com", "162.159.199.2", 443, false)
-            profiles["deepseek.com:443:162.159.198.2 (loc 1) h2"] = Profile("deepseek.com", "162.159.198.2", 443, true)
-            profiles["deepseek.com:443:162.159.199.2 (loc 2) h2"] = Profile("deepseek.com", "162.159.199.2", 443, true)
+            profiles["youtube.com:443:162.159.198.2 (loc 1) h3"] = Profile("youtube.com", "162.159.198.2", 443, false)
+            profiles["youtube.com:443:162.159.199.2 (loc 2) h3"] = Profile("youtube.com", "162.159.199.2", 443, false)
+            profiles["youtube.com:443:162.159.198.2 (loc 1) h2"] = Profile("youtube.com", "162.159.198.2", 443, true)
+            profiles["youtube.com:443:162.159.199.2 (loc 2) h2"] = Profile("youtube.com", "162.159.199.2", 443, true)
             persistProfiles()
         }
         refreshProfileSpinner()

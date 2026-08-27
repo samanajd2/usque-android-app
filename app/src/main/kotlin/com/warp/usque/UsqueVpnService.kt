@@ -103,7 +103,7 @@ class UsqueVpnService : VpnService() {
             val localIp = safeIPv4(configPath)
             DiagLog.add("Service", "local tun IPv4=$localIp")
             val builder = Builder()
-                .setSession("Usque RU VPN")
+                .setSession("Usque VPN")
                 .setMtu(1280)
                 .addAddress(localIp, 32)
                 .addDnsServer("1.1.1.1")
@@ -214,7 +214,7 @@ class UsqueVpnService : VpnService() {
     private fun startForegroundCompat() {
         runCatching {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val channel = NotificationChannel(CHANNEL_ID, "Usque RU VPN", NotificationManager.IMPORTANCE_LOW)
+                val channel = NotificationChannel(CHANNEL_ID, "Usque VPN", NotificationManager.IMPORTANCE_LOW)
                 getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
             }
             val pendingIntent = PendingIntent.getActivity(
@@ -229,7 +229,7 @@ class UsqueVpnService : VpnService() {
                 @Suppress("DEPRECATION")
                 Notification.Builder(this)
             }
-                .setContentTitle("Usque RU VPN")
+                .setContentTitle("Usque VPN")
                 .setContentText("VPN is running")
                 .setSmallIcon(android.R.drawable.stat_sys_warning)
                 .setContentIntent(pendingIntent)
