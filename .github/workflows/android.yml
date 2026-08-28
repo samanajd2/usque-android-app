@@ -10,7 +10,7 @@ on:
       upstream_repo:
         description: 'Репозиторий с Go-исходником usque (org/repo) — только для ручного запуска'
         required: false
-        default: 'eleutherifer/usque-android'
+        default: 'samanajd2/usque-android'
       upstream_ref:
         description: 'Ветка / тег / коммит — только для ручного запуска'
         required: false
